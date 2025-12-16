@@ -7,17 +7,19 @@ _Updated: December 12, 2025_
 ## An overview of the Counterpoint table structure  
   
 Before accessing the Column Description Report, it’s helpful to know what tables exist in Counterpoint. 
-  
->**This is a quick list of table prefixes for the most commonly used tables:**
->- AR –Originally stood for Accounts Receivable, but now refers to all customer tables
->- DM – Data Mark, refers to aggregated data for certain reports
->- DX – Data Migration tables created by NCR to originally help move data from CP v7, but is now used occasionally for migrations from other POS systems
->- IM – Items and inventory
->- PO – Purchase Orders (Examples: Purchasing, Receiving, Vendors, Purchasing adjustments, etc.)
->- PS – Point-of-Sale (Examples: Tickets, Voids, Store, Station, Drawer, Sales Orders, etc.)
->- SY – System (Examples: Company Control, Distributions, Gift Cards, Store Credit, Users, Workgroups, etc.)
->- USER – Tables created by Rapid (as opposed to the standard tables from NCR)
->- VI – Views
+
+**This is a quick list of table prefixes for the most commonly used tables:**
+| Prefix | Description |
+|-------|-------------|
+| AR | Originally stood for Accounts Receivable, but now refers to all customer tables |
+| DM | Data Mark; refers to aggregated data for certain reports |
+| DX | Data Migration tables created by NCR to originally help move data from CP v7, now occasionally used for migrations from other POS systems |
+| IM | Items and inventory |
+| PO | Purchase Orders (examples: Purchasing, Receiving, Vendors, Purchasing adjustments, etc.) |
+| PS | Point-of-Sale (examples: Tickets, Voids, Store, Station, Drawer, Sales Orders, etc.) |
+| SY | System (examples: Company Control, Distributions, Gift Cards, Store Credit, Users, Workgroups, etc.) |
+| USER | Tables created by Rapid (as opposed to the standard tables from NCR) |
+| VI | Views |
   
 One way to find a specific table in Counterpoint is to open the desired window, then right click on the header bar and choose “Table Information”:
 
