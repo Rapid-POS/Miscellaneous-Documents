@@ -6,7 +6,7 @@ _Updated: December 16, 2025_
 
 ## An overview of the Counterpoint table structure  
   
-Before accessing the Column Description Report, it’s helpful to know what tables exist in Counterpoint. 
+Before accessing the Column Description Report, it is helpful to know what tables exist in Counterpoint. 
 
 **This is a quick list of table prefixes for the most commonly used tables:**
 | Prefix | Description |
