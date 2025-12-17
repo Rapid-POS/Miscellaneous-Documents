@@ -74,7 +74,7 @@ The Table Information dialog displays the table name used by that window.
  
 --- 
  
-## Accessing the Column Description Report 
+## Accessing and Configuring the Column Description Report 
  
 To open the Column Description Report, navigate to **System > Utilities > Column Description Report**. 
  
