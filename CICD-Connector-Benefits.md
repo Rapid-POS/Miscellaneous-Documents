@@ -1,4 +1,4 @@
-# Rapid CI/CD Connectors
+# Rapid CI/CD Connector Benefits
 
 _Updated June 4, 2026_
 
