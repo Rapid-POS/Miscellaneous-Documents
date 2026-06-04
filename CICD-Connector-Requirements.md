@@ -34,6 +34,15 @@ Rapid will attempt to provide at least 24 hours' notice prior to scheduled conne
 
 ## Technical Requirements
 
+### Minimum System Requirements
+
+- Minimum Counterpoint version: 8.5.6.2
+- Minimum SQL Server version: 2016
+- Minimum Windows Server version: 2016
+- Minimum PowerShell version: 5.1
+
+If you would like the Mailchimp connector but your system does not meet these minimum requirements, please consult your Care Team Lead (vCIO) for an upgrade quote.
+
 To support automated upgrades, Rapid's Azure-based deployment platform must be permitted to:
 
 - Connect to the server for the purpose of deploying Rapid connector updates.
