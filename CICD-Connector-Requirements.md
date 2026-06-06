@@ -8,6 +8,8 @@ Rapid's connector platform uses a CI/CD (Continuous Integration/Continuous Deplo
 
 If automated deployment is blocked by client security restrictions, Rapid staff will need to perform the work manually — and that time will be billed at current T&M rates. Our goal is to work with your IT team upfront so that all future updates can be delivered automatically, securely, and without extra cost.
 
+*New to Rapid CI/CD connectors? Start with the [CI/CD Connector Benefits](https://github.com/Rapid-POS/Miscellaneous-Documents/blob/main/CICD-Connector-Benefits.md) overview.*
+
 ## Table of Contents
 
 - [Update and Notification Policy](#update-and-notification-policy)
