@@ -1,148 +1,167 @@
 # CI/CD Connector Requirements for Rapid Clients
 
-_Updated June 3, 2026_
+_Updated June 5, 2026_
 
 ## Summary
 
-Rapid's connector platform relies on a CI/CD (Continuous Integration/Continuous Deployment) process to deliver bug fixes, compliance changes, and new functionality to your Rapid connectors.
+Rapid's connector platform uses a CI/CD (Continuous Integration/Continuous Deployment) pipeline to deliver bug fixes, compliance changes, and new features automatically. To receive these updates at no additional cost, clients must allow the deployment access described in this document.
 
-To receive automated updates at no additional cost, clients must allow the deployment access outlined in this document.
+If automated deployment is blocked by client security restrictions, Rapid staff will need to perform the work manually — and that time will be billed at current T&M rates. Our goal is to work with your IT team upfront so that all future updates can be delivered automatically, securely, and without extra cost.
 
 ## Table of Contents
 
-- [Updates and Notification Policy](#updates-and-notification-policy)
+- [Update and Notification Policy](#update-and-notification-policy)
+- [IT Checklist](#it-checklist)
 - [Technical Requirements](#technical-requirements)
 - [Installation Requirements](#installation-requirements)
 - [Upgrade Requirements](#upgrade-requirements)
 - [Offline Station Requirements](#offline-station-requirements)
 - [Replication Limitations](#replication-limitations)
-- [IT Checklist](#it-checklist)
 - [Common Causes of Failed Deployments](#common-causes-of-failed-deployments)
 - [Questions](#questions)
 
-## Updates and Notification Policy
+---
 
-The monthly connector subscription fee includes periodic updates as they become available. 
+## Update and Notification Policy
 
-If an automated deployment is blocked due to client security restrictions and Rapid staff are required to perform manual installation, troubleshooting, coordination with client IT, or other deployment-related activities outside the standard CI/CD process, that work will be billed at current T&M rates.
+Your monthly connector subscription includes periodic updates as they become available.
 
-Our goal is to work with your IT team to establish the necessary access once so that future updates can be delivered automatically, securely, and without additional cost.
+**Scheduled upgrades:** Rapid will attempt to provide at least 24 hours' notice prior to scheduled connector upgrades, along with an estimated deployment window. In rare circumstances, an important update may need to be deployed on short notice or without notice.
 
-Rapid will attempt to provide at least 24 hours' notice prior to scheduled connector upgrades, along with an estimated deployment window. From time to time, an important update may need to be deployed on short notice or without notice. 
+**Manual deployment fees:** If an automated deployment is blocked due to client security restrictions — requiring Rapid staff to install manually, troubleshoot, or coordinate with client IT — that work will be billed at current T&M rates.
 
 #### [↑ Back to Top](#table-of-contents)
 
+---
+
+## IT Checklist
+
+Use this checklist before any installation or upgrade to confirm your environment is ready.
+
+- [ ] Administrator access has been provided to Rapid
+- [ ] Outbound communication to `https://dev.azure.com` (Azure DevOps) is permitted through your firewall, proxy, and web filter
+- [ ] PowerShell script execution is enabled
+- [ ] Endpoint protection, anti-malware, and application control software will not block Rapid deployment scripts or files
+- [ ] All Counterpoint users will be logged out during the deployment window
+- [ ] Offline stations (if applicable) will be powered on and reachable
+
+#### [↑ Back to Top](#table-of-contents)
+
+---
+
 ## Technical Requirements
 
-To support automated upgrades, Rapid's Azure-based deployment platform must be permitted to:
+Rapid's Azure-based deployment platform requires permission to:
 
-- Connect to the server for the purpose of deploying Rapid connector updates.
-- Write, replace, and update files within the Rapid connector installation directories.
-- Stop and restart Rapid connector-related services when required by an upgrade.
-- Operate without being blocked, quarantined, rolled back, or otherwise interrupted by endpoint protection, anti-malware, application control, or similar security software.
-- Complete deployments without requiring manual approval or intervention for each release.
+- Connect to your server to deploy connector updates
+- Write, replace, and update files within Rapid connector installation directories
+- Stop and restart Rapid connector-related services as needed during an upgrade
+- Run without being blocked, quarantined, or rolled back by endpoint protection, anti-malware, or application control software
+- Complete deployments without manual approval or intervention for each release
 
 #### Minimum System Requirements
 
-- Minimum Counterpoint version: 8.5.6.2
-- Minimum SQL Server version: 2016
-- Minimum Windows Server version: 2016
-- Minimum PowerShell version: 5.1
+| Component | Minimum Version |
+|---|---|
+| Counterpoint | 8.5.6.2 |
+| SQL Server | 2016 |
+| Windows Server | 2016 |
+| PowerShell | 5.1 |
 
 #### Network Requirements
 
-- Communication with Azure DevOps deployment services, including <https://dev.azure.com>, must be permitted through firewalls, web filters, proxy servers, and endpoint security products.
+Outbound communication to Azure DevOps — including `https://dev.azure.com` — must be permitted through firewalls, web filters, proxy servers, and endpoint security products.
 
 #### PowerShell Requirements
 
 - PowerShell script execution must be enabled for Rapid deployment and upgrade processes.
-- Endpoint protection, application control, and anti-malware products must not block approved Rapid deployment scripts.
+- Endpoint protection and application control software must not block approved Rapid deployment scripts.
 
 #### [↑ Back to Top](#table-of-contents)
+
+---
 
 ## Installation Requirements
 
 1. Connectors are installed on the Counterpoint server.
-   - Exception: The _Rapid Custom Task Agent_ generally is installed on the Counterpoint server but can be installed on the SQL server in certain use cases when SQL Server is not installed on the Counterpoint server.
-        
-2. Counterpoint and SQL Server versions that meet the requirements for the specific connector must be installed.
 
-3. Administrator-level server access must be provided for the initial installation. 
+   **Exception:** The *Rapid Custom Task Agent* is generally installed on the Counterpoint server, but can be installed on the SQL Server when SQL Server is not co-located with Counterpoint.
+
+2. The server environment must meet the minimum requirements for the specific connector being installed. See [Minimum System Requirements](#minimum-system-requirements) for details.
+
+3. Administrator-level server access must be provided for the initial installation. Most clients run Counterpoint and SQL Server on the same machine. If your Counterpoint and SQL Server are on separate servers, Rapid will need administrator access to both.
 
 4. Administrator-level connector platform access and credentials must be provided.
 
-5. Initial installation of the CI/CD connector will be scheduled with the client based on client and Rapid availability.
-   - All users must be logged out of Counterpoint during installations unless otherwise specified by Rapid.
-   - Installations will typically be scheduled after the close of business.
-   - Exceptions: The _Rapid CP API_ and _Rapid Custom Task Agent_ can typically be installed during business hours.
+5. Initial installation will be scheduled with the client based on mutual availability.
+   - All users must be logged out of Counterpoint during installations unless Rapid specifies otherwise.
+   - Installations are typically scheduled after the close of business.
+
+   **Exception:** The *Rapid CP API* and *Rapid Custom Task Agent* can typically be installed during business hours.
 
 #### [↑ Back to Top](#table-of-contents)
+
+---
 
 ## Upgrade Requirements
 
-1. CI/CD connector upgrades will be deployed automatically through Rapid's deployment platform.
+1. Connector upgrades are deployed automatically through Rapid's deployment platform.
 
-2. All users must be logged out of Counterpoint during upgrades unless otherwise specified by Rapid.
+2. All users must be logged out of Counterpoint during upgrades unless Rapid specifies otherwise.
 
-3. Upgrades that include database schema changes will typically be scheduled after the close of business.
+3. Upgrades that include database schema changes are typically scheduled after the close of business.
 
-4. Rapid will attempt to provide at least 24 hours' notice prior to scheduled connector upgrades, along with an estimated deployment window. From time to time, an important update may need to be deployed on short notice or without notice.
+4. See [Update and Notification Policy](#update-and-notification-policy) for advance notice details.
 
 #### [↑ Back to Top](#table-of-contents)
+
+---
 
 ## Offline Station Requirements
 
-#### For Clients Using Offline Stations
+*This section applies only to clients using offline stations.*
 
-1. Installations and upgrades require the server database to be provisioned and rebuilt on all offline stations.
+1. Both the initial installation and all upgrades require the server database to be provisioned and rebuilt on all offline stations.
 
-2. During both the initial installation and all upgrades, all offline stations must be powered on.
+2. All offline stations must be powered on during installations and upgrades.
 
-3. If offline stations are not powered on, the database rebuild will be queued and will run the next time the workstation is powered on.
+3. If an offline station is not powered on, the database rebuild will be queued and will run the next time that station is powered on.
 
-4. Users must not use Counterpoint while a rebuild is in progress.
+4. Users must not use Counterpoint while a database rebuild is in progress.
 
 #### [↑ Back to Top](#table-of-contents)
+
+---
 
 ## Replication Limitations
 
-#### For Clients Using Replication
+*This section applies only to clients using multi-site replication.*
 
-- Certain CI/CD connectors are not currently supported in multi-site replication environments.
-- If you have a hub server and one or more remote servers, please consult with Rapid before requesting a CI/CD connector.
-
-#### [↑ Back to Top](#table-of-contents)
-
-## IT Checklist
-
-Before installation or upgrade, verify that:
-
-- Administrator access has been provided to Rapid.
-- Azure DevOps communication is permitted.
-- PowerShell execution is enabled.
-- Endpoint protection, anti-malware, and application control software will not block Rapid deployment activity.
-- All required Counterpoint users will be logged out during the deployment window.
-- Offline stations (if applicable) will be powered on and available.
+Certain CI/CD connectors are not currently supported in multi-site replication environments. If you have a hub server and one or more remote servers, consult with Rapid before requesting a CI/CD connector.
 
 #### [↑ Back to Top](#table-of-contents)
+
+---
 
 ## Common Causes of Failed Deployments
 
-The following are the most common reasons automated deployments fail:
+If an automated deployment fails, it is most commonly due to one of the following:
 
-- Azure DevOps traffic blocked by firewall, proxy, or web filtering rules.
-- Endpoint protection or anti-malware software quarantining deployment files.
-- PowerShell execution disabled or restricted.
-- Connector services cannot be stopped or restarted.
-- Insufficient administrative permissions.
-- Users actively logged into Counterpoint during deployment.
-- Offline stations not powered on or unavailable during deployment.
-- Application control software preventing Rapid deployment processes from running.
+- Azure DevOps traffic blocked by a firewall, proxy, or web filter
+- Deployment files quarantined by endpoint protection or anti-malware software
+- PowerShell execution disabled or restricted
+- Connector services unable to be stopped or restarted
+- Insufficient administrative permissions
+- Users logged into Counterpoint during the deployment window
+- Offline stations powered off or unreachable during deployment
+- Application control software blocking Rapid deployment processes
 
 #### [↑ Back to Top](#table-of-contents)
 
+---
+
 ## Questions
 
-Please contact the Rapid Programming Team if your IT staff members require additional technical information regarding the deployment process or access requirements.
+Contact the **Rapid Programming Team** at [support@rapidpos.com](mailto:support@rapidpos.com) if your IT staff need additional technical information about the deployment process or access requirements.
 
 #### [↑ Back to Top](#table-of-contents)
