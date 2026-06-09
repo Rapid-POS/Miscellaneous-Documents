@@ -72,7 +72,9 @@ Rapid's Azure-based deployment platform requires permission to:
 
 #### Network Requirements
 
-Outbound communication to Azure DevOps — including `https://dev.azure.com` — must be permitted through firewalls, web filters, proxy servers, and endpoint security products.
+Outbound communication to **Microsoft Azure DevOps** — including `https://dev.azure.com` — must be permitted through firewalls, web filters, proxy servers, and endpoint security products.
+
+- Review this guide from Microsoft to learn more: [https://learn.microsoft.com/en-us/azure/devops/organizations/security/allow-list-ip-url?view=azure-devops&tabs=IP-V4](https://learn.microsoft.com/en-us/azure/devops/organizations/security/allow-list-ip-url?view=azure-devops&tabs=IP-V4) 
 
 #### PowerShell Requirements
 
