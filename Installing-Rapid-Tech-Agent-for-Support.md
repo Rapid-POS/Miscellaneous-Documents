@@ -13,32 +13,32 @@ The Rapid Tech Agent (ScreenConnect) enables our team to securely access your sy
 2. Click **Install Rapid Support Agent**.
 3. Click on the downloaded file `agent_install.zip`; this will bring you to the Downloads folder.
 
-   ![Downloading agent_install.zip from the Rapid POS web portal](assets/step3-download-agent-zip.png)
+   ![Downloading agent_install.zip from the Rapid POS web portal](images/Installing-Rapid-Tech-Agent-for-Support/step3-download-agent-zip.png)
 
 4. Right-click on the `agent_install.zip` file, and choose **Extract All**.
 
-   ![Right-click agent_install.zip and choose Extract All](assets/step4-extract-all.png)
+   ![Right-click agent_install.zip and choose Extract All](images/Installing-Rapid-Tech-Agent-for-Support/step4-extract-all.png)
 
 5. Once the extracted file opens, right-click on the install file and click **Run as administrator**.
 
-   ![Right-click the install file and choose Run as administrator](assets/step5-run-as-administrator.png)
+   ![Right-click the install file and choose Run as administrator](images/Installing-Rapid-Tech-Agent-for-Support/step5-run-as-administrator.png)
 
 6. If a Windows Security prompt opens, click **More info**, then **Run anyway**.
 
-   ![Windows protected your PC prompt — click More info, then Run anyway](assets/step6-windows-smartscreen.png)
+   ![Windows protected your PC prompt — click More info, then Run anyway](images/Installing-Rapid-Tech-Agent-for-Support/step6-windows-smartscreen.png)
 
 7. Click **Next** on the ConnectWise Automate Remote Agent window. This will run the command prompt in the background (black window).
 
-   ![ConnectWise Automate Remote Agent Setup Wizard — click Next](assets/step7-setup-wizard-next.png)
+   ![ConnectWise Automate Remote Agent Setup Wizard — click Next](images/Installing-Rapid-Tech-Agent-for-Support/step7-setup-wizard-next.png)
 
 8. On the next window, click **Next** — **DO NOT** change any of the settings here.
 
-   ![ConnectWise Automate Server Settings — click Next without changing settings](assets/step8-server-settings.png)
+   ![ConnectWise Automate Server Settings — click Next without changing settings](images/Installing-Rapid-Tech-Agent-for-Support/step8-server-settings.png)
 
 9. Click **Install** on the next window.
 
-   ![Ready to install ConnectWise Automate Remote Agent — click Install](assets/step9-ready-to-install.png)
+   ![Ready to install ConnectWise Automate Remote Agent — click Install](images/Installing-Rapid-Tech-Agent-for-Support/step9-ready-to-install.png)
 
 10. Click **Finish**. Your computer will soon appear in Rapid's ConnectWise, ready for us to service.
 
-    ![Setup complete — click Finish](assets/step10-setup-complete.png)
+    ![Setup complete — click Finish](images/Installing-Rapid-Tech-Agent-for-Support/step10-setup-complete.png)
