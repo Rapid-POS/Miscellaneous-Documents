@@ -1,6 +1,6 @@
 # CI/CD Connector Requirements for Rapid Clients
 
-_Updated June 5, 2026_
+_Updated September 15, 2026_
 
 ## Summary
 
