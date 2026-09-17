@@ -66,7 +66,7 @@ Rapid's Azure-based deployment platform requires permission to:
 | Component | Minimum Version |
 |---|---|
 | Counterpoint | 8.5.6.2 |
-| SQL Server | 2017 |
+| SQL Server | 2016 |
 | Operating System | Windows Server 2016 or Windows 11 Pro |
 | PowerShell | 5.1 |
 
