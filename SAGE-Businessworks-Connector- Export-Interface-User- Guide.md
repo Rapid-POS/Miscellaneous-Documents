@@ -113,8 +113,7 @@ Validate each GL import by comparing CounterPoint's report with BusinessWorks' r
 3. In BusinessWorks, print the **Journal Entry Batch Report** (Figure 3).
 4. Compare the two, using the table below.
 
-<img width="950" height="761" alt="image" src="https://github.com/user-attachments/assets/b6a6364b-8eda-4972-8e2a-3ff00b4ce6bf" />
-
+<img width="935" height="642" alt="image" src="https://github.com/user-attachments/assets/68e4a5fd-7c4b-401c-9861-a11fd6b31978" />
 
 ***Figure 2.** CounterPoint: Distributions by Account Number (Summary).*
 
